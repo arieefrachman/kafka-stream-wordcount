@@ -6,7 +6,6 @@ import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.kstream.*;
-
 import java.util.Arrays;
 import java.util.Properties;
 
@@ -20,6 +19,7 @@ public class StreamsStarterApp {
         config.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
 
         StreamsBuilder builder = new StreamsBuilder();
+
 
         KStream<String,String> textLines = builder.stream("word-count-input");
 
